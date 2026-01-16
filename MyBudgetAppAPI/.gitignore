@@ -1,9 +1,0 @@
-.DS_Store
-../.DS_Store
-# Build folders (Compiled output)
-bin/
-obj/
-build/
-
-# IDE specific files (Visual Studio / IntelliJ / Eclipse)
-.vs/
