@@ -1,8 +1,16 @@
+using MyBudgetApp.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpClient("TransactionsApi", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5289");
+});
+
+builder.Services.AddTransient<IMyBudgetApiExecuter, MyBudgetApiExecuter>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

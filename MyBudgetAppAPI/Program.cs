@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using MyBudgetAppAPI.Data;
-using MyBudgetAppAPI.Models.Repositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(Options =>
 {
