@@ -12,6 +12,7 @@
             <td>Title</td>
             <td>Category</td>
             <td>Account</td>
+            <td>Edit</td>
         </tr>
     </thead>
     <tbody>
@@ -24,8 +25,11 @@
                 <td>@transaction.Title</td>
                 <td>@transaction.Category</td>
                 <td>@transaction.Account</td>
+                <td><a class="btn btn-link" asp-controller="transactions" asp-action="UpdateTransaction"
+                        asp-route-transactionId="@transaction.TransactionId">Edit</a></td>
             </tr>
         }
     </tbody>
-
 </table>
+<br />
+<a class="btn btn-primary" asp-area="" asp-controller="Transactions" asp-action="CreateTransaction">Add</a>

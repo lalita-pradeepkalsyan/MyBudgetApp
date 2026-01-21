@@ -1,0 +1,66 @@
+@model Transaction
+
+<h3>Transaction</h3>
+<br />
+
+<form method="post" asp-action="CreateTransaction" asp-controller="Transactions">
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <label asp-for="TransactionDate" class="col-form-label"></label>
+        </div>
+        <div class="col-6">
+            <input type="date" asp-for="TransactionDate" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <label asp-for="Amount" class="col-form-label"></label>
+        </div>
+        <div class="col-6">
+            <input type="text" asp-for="Amount" class="form-control" min="0" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <label asp-for="TransactionType" class="col-form-label"></label>
+        </div>
+        <div class="col-6">
+            <input type="text" asp-for="TransactionType" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <label asp-for="Title" class="col-form-label"></label>
+        </div>
+        <div class="col-6">
+            <input type="text" asp-for="Title" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <label asp-for="Category" class="col-form-label"></label>
+        </div>
+        <div class="col-6">
+            <input type="text" asp-for="Category" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3 row">
+        <div class="col-2">
+            <label asp-for="Account" class="col-form-label"></label>
+        </div>
+        <div class="col-6">
+            <input type="text" asp-for="Account" class="form-control" />
+        </div>
+    </div>
+    <br />
+    <div class="mb-3 row">
+        <div class="col-4">
+        </div>
+        <div class="col-4">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+        <div class="col-4">
+        </div>
+    </div>
+</form>

@@ -14,5 +14,23 @@ namespace MyBudgetApp.Data
             var httpclient = _httpClientFactory.CreateClient(apiName);
             return await httpclient.GetFromJsonAsync<T>(relativeurl);
         }
+
+        public async Task<T?> InvokePost<T>(string relativeurl, T obj)
+        {
+            var httpclient = _httpClientFactory.CreateClient(apiName);
+            var response = await httpclient.PostAsJsonAsync(relativeurl, obj);
+            response.EnsureSuccessStatusCode();
+
+            return await response.Content.ReadFromJsonAsync<T>();
+        }
+
+        public async Task InvokePut<T>(string relativeurl, T obj)
+        {
+            var httpclient = _httpClientFactory.CreateClient(apiName);
+            var response = await httpclient.PutAsJsonAsync(relativeurl, obj);
+            response.EnsureSuccessStatusCode();
+        }
+
+
     }
 }
